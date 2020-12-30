@@ -329,13 +329,7 @@ require_once('header.php');
                     </div>
 
                 </div>
-                <!-- /.container-fluid -->
-
-
-
-
-
-
+                
 
 <?php 
 require_once('footer.php');

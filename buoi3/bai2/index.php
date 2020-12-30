@@ -28,17 +28,23 @@ session_start();
         <tr>
         	<td><?php echo $user['id']; ?></td>
         	<td><?php echo $user['name']; ?></td>
+        	<td><?php echo $user['sdt']; ?></td>
         	<td><?php echo $user['email']; ?></td>
+        	<td><?php echo $user['adress']; ?></td>
         	<td>
         		<button class="btn btn-info">Sửa</button>
         		<button class="btn btn-danger">Xóa</button>
         	</td>
         </tr>
 
-    		}
-    	}
-  
+        <?php
+    }
+
+    	?>
   </tbody>
 </table>
+	<div>
+		<a href="" class="btn-success">Thêm</a>
+	</div>
 </body>
 </html>
