@@ -37,10 +37,7 @@ session_start();
         	</td>
         </tr>
 
-        <?php
-    }
-
-    	?>
+    	
   </tbody>
 </table>
 	<div>
