@@ -60,11 +60,12 @@ class Model{
 	return $status;
 }
 
-protected function getID ($table, $id){
-		   $query ="SELECT * FROM $table WHERE id =".$id;$this->		   $result = $this->conn->query($query);
-		   $row = $result->fetch_assoc();
-		   return $row;
-  		}
+    protected function getID($table,$id){
+		$query = "SELECT * from $table WHERE id = ". $id;
+		$result = $this->conn->query($query);
+		$row = $result->fetch_assoc();
+		return $row;
+		}
   		protected function where($table, $where = []){
   			 $query ="SELECT * FROM $table WHERE ";
   			 $string = '';
@@ -87,33 +88,27 @@ protected function getID ($table, $id){
   			 }
   			 return $data;
   		}
-// function delete($table, $id){
-//    $query = "DELETE From " .$table ." WHERE id = " .$id;
-
-//    $connection = new Connection();
-//     $conn = $connection->connect();
-//    $status = $conn->query($query);
-//    return $status;
-// }
-
- protected function update($table, $data, $id){
-	$query = "UPDATE $table SET ";
-	$string = '';
-	$i = 0;
-	foreach ($data as $column => $value) {
-		$i++;
-		$string .= $column . "=" . "'" . $value . "'";
-
-		if ($i != count($data)) {
-			$string .= ",";
-		}
+	protected function delete($table, $id){
+		$query = "DELETE FROM "  . $table ." WHERE id = " . $id;
+		$result = $this->conn->query($query);
+		return $result;
 	}
-	$query = $query . $string .  " WHERE id = " . $id;
-	
-	$connection = new Connection();
-    $conn = $connection->connect();
-	$status = $conn->query($query);
-	return $status;
-}
+
+	 protected function update($table, $data, $id){
+		$query = "UPDATE $table SET ";
+		$string = '';
+		$i=0;
+		foreach ($data as $column => $value) {
+			$i++;
+			if ($i != count($data)) {
+				$string .= $column . " = " . "'" . $value . "'" . ',';
+			}
+			else
+				$string .= $column . " = " . "'" . $value . "'";
+		}
+		$query = $query . $string . " WHERE id = " . $id;
+		$result = $this->conn->query($query);
+		return $result; 
+	}
 }
 ?>
