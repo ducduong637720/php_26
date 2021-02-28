@@ -19,7 +19,7 @@
                     </div>
                     <div class="form-group">
                         <label for="">Ảnh</label>
-                        <input type="text" class="form-control" id="" placeholder="" name="thumbnail">
+                        <input type="file" class="form-control" id="" placeholder="" name="thumbnail">
                     </div>
                     <div class="form-group">
                         <label for="">Chi tiết</label>
